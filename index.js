@@ -218,10 +218,23 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(odometerInitial) {
+  /* code here */
+  const car = {
+    odometer: odometerInitial,
+    drive: function(tripDistance){
+      if (tripDistance >= 0){
+        this.odometer += tripDistance;
+      }
+      return this.odometer;
+    },
+  };
+  return car;
+  
 }
+
+const car1 = carMaker(100);
+console.log(car1.drive(10));
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
